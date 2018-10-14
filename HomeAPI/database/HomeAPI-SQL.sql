@@ -1,0 +1,13 @@
+CREATE DATABASE home;
+GRANT ALL PRIVILEGES ON home.* TO 'home'@'%' IDENTIFIED BY 'home1234';
+
+
+CREATE TABLE IF NOT EXISTS `home`.`hygrothermograph` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `region` VARCHAR(20) NOT NULL,
+  `temperature` DOUBLE NULL DEFAULT NULL,
+  `humidity` DOUBLE NULL DEFAULT NULL,
+  `measurement_date` DATETIME DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
