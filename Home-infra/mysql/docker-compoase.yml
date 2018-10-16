@@ -1,0 +1,23 @@
+version: '2'
+volumes:
+  mysql_db: {}
+services:
+  mysql:
+    build: .
+    image: hypriot/rpi-mysql
+    container_name: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=kani
+      - MYSQL_TCP_PORT=3306
+    volumes:
+      - mysql_db:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    restart: always
+    networks:
+      home_bridge:
+        ipv4_address: 172.18.0.2
+networks:
+  home_bridge:
+    external:
+      name: home_bridge

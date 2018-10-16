@@ -1,0 +1,21 @@
+version: '2'
+services:
+  home-api:
+    container_name: home-api
+    image: kaniz/home-api:latest
+    entrypoint:
+        - java
+        - -Djava.security.egd=file:/dev/./urandom
+        - -jar
+        - -Dspring.profiles.active=production
+        - home-api.jar
+    ports:
+      - "8080:8080"
+    restart: always
+    networks:
+      home_bridge:
+        ipv4_address: 172.18.0.3
+networks:
+  home_bridge:
+    external:
+      name: home_bridge

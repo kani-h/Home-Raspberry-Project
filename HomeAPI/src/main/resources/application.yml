@@ -22,7 +22,7 @@ spring:
 spring:
   profiles: production
   datasource:
-    url: jdbc:mysql://192.168.1.164:3306/home?verifyServerCertificate=false&useSSL=false
+    url: jdbc:mysql://172.18.0.2:3306/home?verifyServerCertificate=false&useSSL=false
     username: home
     password: home1234
     driver-class-name: com.mysql.jdbc.Driver
